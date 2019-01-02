@@ -1,0 +1,113 @@
+<html>
+<head>
+<title>Image_Optional_Header</title>
+</head>
+
+<body>
+<strong>start_offset = {z[0]:08X}</strong>
+<strong>size = {z[1]:08X}</strong>
+<strong>Magic</strong>
+   <p>vra = 0x{x[0]:08X}</p>
+   <p>offset = 0x{y[0]:08X}</p>
+<strong>MajorLinkerVersion</strong>
+   <p>vra = 0x{x[1]:08X}</p>
+   <p>offset = 0x{y[1]:08X}</p>
+<strong>MinorLinkerVersion</strong>
+   <p>vra = 0x{x[2]:08X}</p>
+   <p>offset = 0x{y[2]:08X}</p>
+<strong>SizeOfCode</strong>
+   <p>vra = 0x{x[3]:08X}</p>
+   <p>offset = 0x{y[3]:08X}</p>
+<strong>SizeOfInitializedData</strong>
+   <p>vra = 0x{x[4]:08X}</p>
+   <p>offset = 0x{y[4]:08X}</p>
+<strong>SizeOfUninitializedData</strong>
+   <p>vra = 0x{x[5]:08X}</p>
+   <p>offset = 0x{y[5]:08X}</p>
+<strong>AddressOfEntryPoint</strong>
+   <p>vra = 0x{x[6]:08X}</p>
+   <p>offset = 0x{y[6]:08X}</p>
+<strong>BaseOfCode</strong>
+   <p>vra = 0x{x[7]:08X}</p>
+   <p>offset = 0x{y[7]:08X}</p>
+<strong>ImageBase</strong>
+   <p>vra = 0x{x[8]:08X}</p>
+   <p>offset = 0x{y[8]:08X}</p>
+<strong>SectionAlignment</strong>
+   <p>vra = 0x{x[9]:08X}</p>
+   <p>offset = 0x{y[9]:08X}</p>
+<strong>FileAlignment</strong>
+   <p>vra = 0x{x[10]:08X}</p>
+   <p>offset = 0x{y[10]:08X}</p>
+<strong>MajorOperatingSystemVersion</strong>
+   <p>vra = 0x{x[11]:08X}</p>
+   <p>offset = 0x{y[11]:08X}</p>
+<strong>MinorOperatingSystemVersion</strong>
+   <p>vra = 0x{x[12]:08X}</p>
+   <p>offset = 0x{y[12]:08X}</p>
+<strong>MajorImageVersion</strong>
+   <p>vra = 0x{x[13]:08X}</p>
+   <p>offset = 0x{y[13]:08X}</p>
+<strong>MinorImageVersion</strong>
+   <p>vra = 0x{x[14]:08X}</p>
+   <p>offset = 0x{y[14]:08X}</p>
+<strong>MajorSubsystemVersion</strong>
+   <p>vra = 0x{x[15]:08X}</p>
+   <p>offset = 0x{y[15]:08X}</p>
+<strong>MinorSubsystemVersion</strong>
+   <p>vra = 0x{x[16]:08X}</p>
+   <p>offset = 0x{y[16]:08X}</p>
+<strong>SizeOfImage</strong>
+   <p>vra = 0x{x[17]:08X}</p>
+   <p>offset = 0x{y[17]:08X}</p>
+<strong>SizeOfHeaders</strong>
+   <p>vra = 0x{x[18]:08X}</p>
+   <p>offset = 0x{y[18]:08X}</p>
+<strong>CheckSum</strong>
+   <p>vra = 0x{x[19]:08X}</p>
+   <p>offset = 0x{y[19]:08X}</p>
+<strong>Subsystem</strong>
+   <p>vra = 0x{x[20]:08X}</p>
+   <p>offset = 0x{y[20]:08X}</p>
+<strong>DllCharacteristics</strong>
+   <p>vra = 0x{x[21]:08X}</p>
+   <p>offset = 0x{y[21]:08X}</p>
+<strong>SizeOfStackReserve</strong>
+   <p>vra = 0x{x[22]:08X}</p>
+   <p>offset = 0x{y[22]:08X}</p>
+<strong>SizeOfStackCommit</strong>
+   <p>vra = 0x{x[23]:08X}</p>
+   <p>offset = 0x{y[23]:08X}</p>
+<strong>SizeOfHeapReserve</strong>
+   <p>vra = 0x{x[24]:08X}</p>
+   <p>offset = 0x{y[24]:08X}</p>
+<strong>SizeOfHeapCommit</strong>
+   <p>vra = 0x{x[25]:08X}</p>
+   <p>offset = 0x{y[25]:08X}</p>
+<strong>LoaderFlags</strong>
+   <p>vra = 0x{x[26]:08X}</p>
+   <p>offset = 0x{y[26]:08X}</p>
+<strong>NumberOfRvaAndSizes</strong>
+   <p>vra = 0x{x[27]:08X}</p>
+   <p>offset = 0x{y[27]:08X}</p>
+
+<img src = "https://i.imgur.com/dVUQTDg.png">
+<span style = "font-size : 2em;"><br><br>IMAGE_OPTIONAL_HEADER32</span>
+<p>- IMAGE_FILE_HEADER에 실행 파일 그 자체에 대한 정보를 가지고 있다면 IMAGE_OPTIONAL_HEADER의 영역에는 실제 파일을 실행하는 데 필요한 정보가 담겨져 있습니다.</p>
+<p>- Option이라는 이름은 오브젝트 파일이 이 영역을 선택적으로 가질 수 있기 때문에 붙여진 이름일 뿐 실제로는 파일을 실행하는 데 있어서 IMAGE_FILE_HEADER에 있는 정보보보다 중요합니다.</p>
+<p>- 크기는 유동적이며 앞에 있는 IMAGE_FILE_HEADER의 SizeofOptionalHeader에 의해 그 크기가 결정됩니다.</p>
+<img src= "https://i.imgur.com/MQAMuTa.png">
+<span style = "font-size : 2em;"><br><br>Standard Fields</span>
+<p>- 8개의 필드로 구성되어 있으며 파일을 로드하고 실행하는 데 중요한 정보가 들어있습니다.</p>
+<p>- 주로 실행 파일이 가상 메모리에 맵핑되었을 때 실행 코드와 데이터들이 맵핑되는 메모리상의 주소에 대한 상대 주소 값들을 가지고 있습니다.</p>
+<img src= "https://i.imgur.com/leuI6zU.png">
+<span style = "font-size : 2em;"><br><br>NT Additional Fields</span>
+<p>- 총 21개의 항목으로 구성되어 있으며 윈도우 링커와 로더가 사용하는 정보를 제공합니다.</p>
+<img src= "https://i.imgur.com/n7P5BW6.png">
+<span style = "font-size : 2em;"><br><br>IMAGE_DATA_DIRECTORY</span>
+<p>- NT Additional Fields의 하부 구조체입니다.</p>
+<p>- MS의 공식 명세서에 따르면 엔트리의 개수는 정해진 바가 없다는 것을 알 수 있습니다.</p>
+<p>- 각 엔트리는 8bytes 인데 이중 4bytes는 가상주소(RVA)를 나타내고 나머지 4bytes는 크기를 의미합니다.</p>
+<img src= "https://i.imgur.com/L4PRJhV.png">
+</body>
+</html>

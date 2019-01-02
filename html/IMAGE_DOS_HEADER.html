@@ -1,0 +1,54 @@
+<html>
+<head>
+<title>DOS Header</title>
+</head>
+
+<body>
+<strong>start_offset = {:08X}</strong><br>
+<strong>size = {:08X}</strong><br><br>
+<strong>e_magic</strong> = 0x{x[0]:08X}<br>
+<p>- Magic number</p>
+<strong>e_cblp</strong> = 0x{x[1]:08X}<br>
+<p>- Bytes on last page of file</p>
+<strong>e_cp</strong> = 0x{x[2]:08X}<br>
+<p>- Pages in file</p>
+<strong>e_crlc</strong> = 0x{x[3]:08X}<br>
+<p>- Relocations</p>
+<strong>e_cparhdr</strong> = 0x{x[4]:08X}<br>
+<p>- Size of header in paragraphs</p>
+<strong>e_minalloc</strong> = 0x{x[5]:08X}<br>
+<p>- Minimum extra paragraphs needed</p>
+<strong>e_maxalloc</strong> = 0x{x[6]:08X}<br>
+<p>- Maximum extra paragraphs needed</p>
+<strong>e_ss</strong> = 0x{x[7]:08X}<br>
+<p>- Initial (relative) SS value</p>
+<strong>e_sp</strong> = 0x{x[8]:08X}<br>
+<p>- Initial SP value</p>
+<strong>e_csum</strong> = 0x{x[9]:08X}<br>
+<p>- Checksum</p>
+<strong>e_ip</strong> = 0x{x[10]:08X}<br>
+<p>- Initial IP value</p>
+<strong>e_cs</strong> = 0x{x[11]:08X}<br>
+<p>- Initial (relative) CS value</p>
+<strong>e_lfarlc</strong> = 0x{x[12]:08X}<br>
+<p>- File address of relocation table</p>
+<strong>e_ovno</strong> = 0x{x[13]:08X}<br>
+<p>- Overlay number</p>
+<strong>e_oemid</strong> = 0x{x[14]:08X}<br>
+<p>- OEM identifier (for e_oeminfo)</p>
+<strong>e_oeminfo</strong> = 0x{x[15]:08X}<br>
+<p>- OEM information; e_oemid specific</p>
+<strong>e_lfanew</strong> = 0x{x[16]:08X}<br>
+<p>- File address of new exe header</p><br>
+
+
+<img src="https://i.imgur.com/wUPbHlQ.png">
+<p>● DOS 헤더는 항상 64bytes의 사이즈를 가지며 IMAGE_DOS_HEADER라는 구조체로 정의됩니다.</p>
+<p>● DOS 헤더는 20개 정도의 멤버를 구성되있지만 중요한 것은 처음 2bytes를 차지하는 e_magic과 마지막 4bytes를 차지하는 e_lfanew 뿐입니다.</p>
+<span style = "font-size:2em;">e_magic</span>
+<p>- DOS 헤더의 처음 2bytes를 차지하는 e_magic은 DOS 헤더의 signature로 항상 'MZ(0x4D/0x5A)'의 값을 가집니다.</p>
+<p>- MZ는 Mark Zbikowski라는 DOS 실행파일을 처음 설계한 사람의 이니셜입니다.</p>
+<span style = "font-size:2em;">e_lfanew</span>
+<p>- DOS 헤더의 마지막 4bytes를 차지하는 e_lfanew는 PE 헤더의 시작점을 가리키는 오프셋 값입니다.</p>
+</body>
+</html>

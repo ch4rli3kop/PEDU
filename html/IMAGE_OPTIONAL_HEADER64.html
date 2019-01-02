@@ -1,0 +1,90 @@
+<html>
+<head>
+<title>Image_Optional_Header</title>
+</head>
+
+<body>
+<strong>start_offset = {:08X}</strong><br>
+<strong>size = {:08X}</strong><br><br>
+<strong>Magic</strong> = 0x{x[0]:08X}<br>
+<p>- 실행 파일의 상태를 나타내는 부호없는 정수 값이다. </p>
+<p>- 0x10B -> 일반적인 실행파일 </p>
+<p>- 0x107 ?> 롬 이미지 </p>
+<p>- 0x20B -> 32bit + Executable 타입 </p>
+<strong>MajorLinkerVersion</strong> = 0x{x[1]:08X}<br>
+<p>- 링커의 메이저 버전 넘버</p>
+<strong>MinorLinkerVersion</strong> = 0x{x[2]:08X}<br>
+<p>- 링커의 마이너 버전 넘버</p>
+<strong>SizeOfCode</strong> = 0x{x[3]:08X}<br>
+<p>- 코드 섹션(.text)의 크기(총합)</p>
+<strong>SizeOfInitializedData</strong> = 0x{x[4]:08X}<br>
+<p>- 초기화된 데이터 섹션의 크기(총합)</p>
+<strong>SizeOfUninitializedData</strong> = 0x{x[5]:08X}<br>
+<p>- 초기화 되지 않은 데이터 섹션의 크기(총합)</p>
+<strong>AddressOfEntryPoint</strong> = 0x{x[6]:08X}<br>
+<p>- 메모리에 맵핑된 상태에서의 실행 코드 주소. 상대적인 주소인 RVA이며 보통 .text 섹션 내의 특정 주소를 가리키게 된다.</p>
+<strong>BaseOfCode</strong> = 0x{x[7]:08X}<br>
+<p>- 실행 파일이 메모리에 맵핑된 상태에서 코드 섹션 주소(RVA)</p>
+<strong>ImageBase</strong> = 0x{x[8]:08X}<br>
+<p>- 가상 메모리에 로드된 실행 파일의 시작 주소를 의미하며 이값은 반드시 65KB의 배수이다.</p>
+<strong>SectionAlignment</strong> = 0x{x[9]:08X}<br>
+<p>- 가상주소에 맵핑될 때 섹션이 할당 받을 가상 주소의 기준 값</p>
+<p>- 가상 메모리에 맵핑될 때 실행파일 그대로 로드 안되고 섹션별로 로드됨 </p>
+<p>- 섹션의 시작 주소는 메모리 페이지의 배수 이므로 FileAlignment와 같거나 크다. 기본값은 페이지 크기와 같다.</p>
+<strong>FileAlignment</strong> = 0x{x[10]:08X}<br>
+<p>- PE 파일 내에서 섹션들이 시작하는 주소의 기준 값이다. 섹션들의 시작하는 주소는 이 값의 배수이다.</p>
+<strong>MajorOperatingSystemVersion</strong> = 0x{x[11]:08X}<br>
+<p>- 실행 파일을 실행하는 데 필요한 OS의 최소 메이저 버전</p>
+<strong>MinorOperatingSystemVersion</strong> = 0x{x[12]:08X}<br>
+<p>- 실행 파일을 실행하는 데 필요한 OS의 최소 마이너 버전</p>
+<strong>MajorImageVersion</strong> = 0x{x[13]:08X}<br>
+<p>- 실행 파일의 메이저 버전</p>
+<strong>MinorImageVersion</strong> = 0x{x[14]:08X}<br>
+<p>- 실행 파일의 마이너 버전</p>
+<strong>MajorSubsystemVersion</strong> = 0x{x[15]:08X}<br>
+<p>- 실행 파일을 실행하는 데 필요한 서브 시스템의 메이저 버전</p>
+<strong>MinorSubsystemVersion</strong> = 0x{x[16]:08X}<br>
+<p>- 실행 파일을 실행하는 데 필요한서브 시스템의 마이너 버전</p>
+<strong>SizeOfImage</strong> = 0x{x[17]:08X}<br>
+<p>- 메모리에 로드 되었을 때 실행 파일의 크기. 헤더를 포함한 크기이다. 로더는 이 값을 기준으로 가상 메모리에서 실행 파일을 맵필할 공간을 예약한다.</p>
+<strong>SizeOfHeaders</strong> = 0x{x[18]:08X}<br>
+<p>- DOS stub, PE 헤더, 섹션 헤더의 합</p>
+<strong>CheckSum</strong> = 0x{x[19]:08X}<br>
+<p>- 실행 파일의 체크섬 값이다. 이 체크섬 값을 계산할 때 사용하는 알고리즘은 IMAGHELP.DLL에 들어있다. 이 값은 DLL파일을 검증할 때 사용한다.</p>
+<strong>Subsystem</strong> = 0x{x[20]:08X}<br>
+<p>- 실행 파일을 실행하는 데 필요한 서브 시스템</p>
+<strong>DllCharacteristics</strong> = 0x{x[21]:08X}<br>
+<p>- PE 파일이 DLL 파일인 경우 파일의 속성 정보를 의미한다</p>
+<strong>SizeOfStackReserve</strong> = 0x{x[22]:08X}<br>
+<p>- 예약할 스택의 크기</p>
+<strong>SizeOfStackCommit</strong> = 0x{x[23]:08X}<br>
+<p>- 커밋할 스택의 크기</p>
+<strong>SizeOfHeapReserve</strong> = 0x{x[24]:08X}<br>
+<p>- 예약할 로컬 힙의 크기</p>
+<strong>SizeOfHeapCommit</strong> = 0x{x[25]:08X}<br>
+<p>- 커밋할 로컬 힙의 크기</p>
+<strong>LoaderFlags</strong> = 0x{x[26]:08X}<br>
+<p>- 예약된 영역으로 0으로 채워져 있다.</p>
+<strong>NumberOfRvaAndSizes</strong> = 0x{x[27]:08X}<br>
+<p>- Optional Header의 나머지 부분에 있는 데이터 디렉터리 엔트리의 숫자</p><br>
+
+<img src = "https://i.imgur.com/dVUQTDg.png">
+<span style = "font-size : 2em;"><br><br>IMAGE_OPTIONAL_HEADER64</span>
+<p>- IMAGE_FILE_HEADER에 실행 파일 그 자체에 대한 정보를 가지고 있다면 IMAGE_OPTIONAL_HEADER의 영역에는 실제 파일을 실행하는 데 필요한 정보가 담겨져 있습니다.</p>
+<p>- Option이라는 이름은 오브젝트 파일이 이 영역을 선택적으로 가질 수 있기 때문에 붙여진 이름일 뿐 실제로는 파일을 실행하는 데 있어서 IMAGE_FILE_HEADER에 있는 정보보보다 중요합니다.</p>
+<p>- 크기는 유동적이며 앞에 있는 IMAGE_FILE_HEADER의 SizeofOptionalHeader에 의해 그 크기가 결정됩니다.</p>
+<img src= "https://i.imgur.com/MQAMuTa.png">
+<span style = "font-size : 2em;"><br><br>Standard Fields</span>
+<p>- 8개의 필드로 구성되어 있으며 파일을 로드하고 실행하는 데 중요한 정보가 들어있습니다.</p>
+<p>- 주로 실행 파일이 가상 메모리에 맵핑되었을 때 실행 코드와 데이터들이 맵핑되는 메모리상의 주소에 대한 상대 주소 값들을 가지고 있습니다.</p>
+<img src= "https://i.imgur.com/PINCOxK.png">
+<span style = "font-size : 2em;"><br><br>NT Additional Fields</span>
+<p>- 총 21개의 항목으로 구성되어 있으며 윈도우 링커와 로더가 사용하는 정보를 제공합니다.</p>
+<img src= "https://i.imgur.com/0sZPboN.png">
+<span style = "font-size : 2em;"><br><br>IMAGE_DATA_DIRECTORY</span>
+<p>- NT Additional Fields의 하부 구조체입니다.</p>
+<p>- MS의 공식 명세서에 따르면 엔트리의 개수는 정해진 바가 없다는 것을 알 수 있습니다.</p>
+<p>- 각 엔트리는 8bytes 인데 이중 4bytes는 가상주소(RVA)를 나타내고 나머지 4bytes는 크기를 의미합니다.</p>
+<img src= "https://i.imgur.com/ovbjgap.png">
+</body>
+</html>

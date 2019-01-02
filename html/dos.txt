@@ -1,0 +1,14 @@
+<html>
+<head>
+<title>DOS</title>
+</head>
+
+<body>
+<p>도스 영역</p>
+<p>vra = {}</p>
+<p>- DOS MZ Header DOS Stub Program 영역</p>
+<p>- 윈도우용 PE 파일을 DOS 모드에서 실행하려고 할 때 사용자에게 에러 메시지를 보여주기 위해 존재한다.</p>
+<p>- 실제적으로 파일 실행에는 전혀 관여하지 않는 부분이다.</p>
+<img src="C:\Users\osw-top\Desktop\팀플\설명충 그림들\noname01.bmp"></p>
+</body>
+</html>

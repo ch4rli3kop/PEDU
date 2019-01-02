@@ -1,0 +1,18 @@
+<html>
+<head>
+<title>DOS Header</title>
+</head>
+
+<body>
+<img src="https://i.imgur.com/wUPbHlQ.png">
+<p>● DOS 헤더는 항상 64bytes의 사이즈를 가지며 IMAGE_DOS_HEADER라는 구조체로 정의됩니다.</p>
+<p>● DOS 헤더는 20개 정도의 멤버를 구성되있지만 중요한 것은 처음 2bytes를 차지하는 e_magic과 마지막 4bytes를 차지하는 e_lfanew 뿐입니다.</p>
+<p>vra = {}</p>
+<span style = "font-size:2em;">e_magic</span>
+<p>- DOS 헤더의 처음 2bytes를 차지하는 e_magic은 DOS 헤더의 signature로 항상 'MZ(0x4D/0x5A)'의 값을 가집니다.</p>
+<p>- MZ는 Mark Zbikowski라는 DOS 실행파일을 처음 설계한 사람의 이니셜입니다.</p>
+<span style = "font-size:2em;">e_lfanew</span>
+<p>- DOS 헤더의 마지막 4bytes를 차지하는 e_lfanew는 PE 헤더의 시작점을 가리키는 오프셋 값입니다.</p>
+<img src="https://i.imgur.com/tjfjXqQ.png">
+</body>
+</html>

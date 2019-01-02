@@ -1,0 +1,15 @@
+<html>
+<head>
+<title>Signature</title>
+</head>
+
+<body>
+<strong>start_offset = {:08X}</strong><br>
+<strong>size = {:08X}</strong><br><br>
+<img src = "https://i.imgur.com/dVUQTDg.png">
+<p>Signature</p>
+<p>- DOS 영역의 magic처럼 PE 영역의 시작을 알리는 값입니다.</p>
+<p>- 4bytes로 구성되며 항상 ‘PE/0/0 (0x50/0x45/0x00/0x00)’로 고정되어 있습니다.</p>
+<p>- IMAGE_DOS_HEADER 구조체의 e_lfanew 필드가 가리키는 오프셋에서부터 4bytes의 값    이며 이를 이용해 PE임을 구분할 수 있습니다.</p>
+</body>
+</html>

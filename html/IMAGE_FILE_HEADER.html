@@ -1,0 +1,37 @@
+<html>
+<head>
+<title>Image_File_Header</title>
+</head>
+
+<body>
+<strong>start_offset = {:08X}</strong><br>
+<strong>size = {:08X}</strong><br><br>
+<strong>Machine</strong> = 0x{x[0]:08X}<br>
+<p>- 실행파일이 사용하는 CPU를 나타낸다</p>
+<strong>NumberOfSections</strong> = 0x{x[1]:08X}<br>
+<p>- 실행파일이 가지고 있는 섹션 개수</p>
+<strong>TimeDateStamp</strong> = 0x{x[2]:08X}<br>
+<p>- 실행 파일이 컴파일된 시간으로 컴파일한 컴퓨터의 시스템 시간을 의미</p>
+<strong>PointerToSymbolTable</strong> = 0x{x[3]:08X}<br>
+<p>- COFF 심볼 파일의 오프셋이다. 이는 더 이상 사용하지 않으므로 값이 반드시 0이어야 한다.</p>
+<strong>NumberOfSymbols</strong> = 0x{x[4]:08X}<br>
+<p>- 심볼 테이블에 있는 엔트리의 개수를 나타낸다. 이는 더 이상 사용하지 않으므로 값이 반드시 0이어야 한다.</p>
+<strong>SizeOfOptionalHeader</strong> = 0x{x[5]:08X}<br>
+<p>- 옵션헤더의 크기를 의미한다. 실행파일에만 필요하며 오브젝트 파일에는 필요가 없다.
+0x10b는 32bit를 의미하며 0x20b는 64비트를 의미한다.</p>
+<strong>Characteristics</strong> = 0x{x[6]:08X}<br>
+<p>- 파일의 속성 정보를 나타낸다.</p><br>
+
+<img src="https://i.imgur.com/dVUQTDg.png">
+<span style = "font-size : 2em;"><br><br>IMAGE_FILE_HEADER</span>
+<p>- 길이는 20bytes 이며 IMAGE_SIZEOF_FILE_HEADER 라는 매크로로 정의 되어 있으며 내부 구조는 아래 표와 같습니다.</p>
+<p>- IMAGE_FILE_HEADER에서 중점적으로 살펴볼 필드는 NumberofSection, TimeDataStamp, SizeofOptionalHeader, Characteristic 항목입니다.</p>
+<img src="https://i.imgur.com/FmfZW2w.png">
+<span style = "font-size : 1.5em;"><br><br>지원 가능한 Machine(CPU)의 종류</span>
+<p></p>
+<img src="https://i.imgur.com/U3Yy7ie.png">
+<span style = "font-size : 1.5em;"><br><br>PE 파일에서 가능한 속성 목록</span>
+<p></p>
+<img src="https://i.imgur.com/9hrMZjm.png">
+</body>
+</html>
